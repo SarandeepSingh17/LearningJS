@@ -74,10 +74,18 @@ const Server = http.createServer((req,res)=>{
     if(req.url ==='/')
     {
         res.end('Welocme to Home page')
+        return
     }  
     if(req.url === '/about')
     {
+        //BLOCKING CODE!!!
+        // for(let i = 0;i<1000;i++){
+        //     for(let j = 0;j<1000;j++){
+        //         console.log(`${i} ${j}`)
+        //     }
+        // }
         res.end('This is our about page')
+        return
     }
     res.end(`
         <h1>OOPS!</h1>
